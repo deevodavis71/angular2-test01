@@ -61,6 +61,9 @@ export class StevesComponent implements OnInit {
   saveNewJedi () {
     console.log ('you entered', this.newJedi);
 
+    if (this.newJedi == '')
+      return;
+
     let newJediPerson = new Person ();
     newJediPerson.name = this.newJedi;
     this.peopleService.save (newJediPerson);

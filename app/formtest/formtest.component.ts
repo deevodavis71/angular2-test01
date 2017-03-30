@@ -6,27 +6,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'login-page',
-  template: `<section class="sample-app-content">
-                <h1>Model-based Form Example:</h1>
-                <form [formGroup]="form" (ngSubmit)="onSubmitModelBased()">
-                    <p>
-                        <label>First Name:</label>
-                        <input type="text" formControlName="firstName">
-                    </p>
-                    <p>
-                        <label>Password:</label>
-                        <input type="password" formControlName="password">
-                    </p>
-
-                    <p>
-                        <button type="submit" [disabled]="!form.valid">Submit</button>
-                        <button type="button" (click)="partialUpdate()">Partial Update</button>
-                        <button type="button" (click)="fullUpdate()">Full Update</button>
-                        <button type="button" (click)="reset()">Cancel</button>
-                    </p>
-
-                </form>
-            </section>`
+  moduleId: module.id,
+  templateUrl: 'login-page.html' 
 })
 
 export class FormTestComponent {

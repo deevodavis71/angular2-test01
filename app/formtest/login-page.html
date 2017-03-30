@@ -1,18 +1,20 @@
 <section class="sample-app-content">
-    <h1>Template-driven Form Example:</h1>
-    <form #f="ngForm" (ngSubmit)="onSubmitTemplateBased()">
+    <h1>Model-based Form Example:</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmitModelBased()">
         <p>
             <label>First Name:</label>
-            <input type="text"  
-                [(ngModel)]="user.firstName" required>
+            <input type="text" formControlName="firstName">
         </p>
         <p>
             <label>Password:</label>
-            <input type="password"  
-                [(ngModel)]="user.password" required>
+            <input type="password" formControlName="password">
         </p>
+
         <p>
-            <button type="submit" [disabled]="!f.valid">Submit</button>
+            <button type="submit" [disabled]="!form.valid">Submit</button>
+            <button type="button" (click)="partialUpdate()">Partial Update</button>
+            <button type="button" (click)="fullUpdate()">Full Update</button>
+            <button type="button" (click)="reset()">Cancel</button>
         </p>
     </form>
 </section>
