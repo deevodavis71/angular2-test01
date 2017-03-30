@@ -5,16 +5,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { StevesComponent } from './steves/steves.component';
 import { AboutComponent } from './about/about.component';
-import { PeopleService } from './people/people.service'
+import { FormTestComponent } from './formtest/formtest.component';
 
+import { PeopleService } from './people/people.service'
 import { WebApiPromiseService } from './web-api/web-api-promise.service';
 
 import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: 'steves', component: StevesComponent },
   { path: 'about',  component: AboutComponent },
+  { path: 'formtest',  component: FormTestComponent },
   { path: '', redirectTo: '/', pathMatch: 'full' }
 ];
 
@@ -23,11 +25,13 @@ const appRoutes: Routes = [
     imports: [RouterModule.forRoot(appRoutes),
               BrowserModule,
               HttpModule,
-              FormsModule],
+              FormsModule,
+              ReactiveFormsModule],
 
     declarations: [AppComponent,
                    StevesComponent,
                    AboutComponent,
+                   FormTestComponent,
                    ],
 
     providers: [PeopleService,
