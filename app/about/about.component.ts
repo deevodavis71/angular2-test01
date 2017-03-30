@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
-
 import { ActivatedRoute, Router } from '@angular/router';
+
+import { ChildComponent } from '../child/child.component';
 
 @Component({
   selector: 'about',
   template: `About Page
              <br>
-            <span *ngIf="firstName">Hello {{ firstName }}</span>`,
+             <span *ngIf="firstName">Hello {{ firstName }}</span>
+             <br>
+             <child-component [passedFirstName]='firstName'></child-component>`,
 })
 
 export class AboutComponent {

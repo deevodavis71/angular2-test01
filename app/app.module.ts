@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { StevesComponent } from './steves/steves.component';
 import { AboutComponent } from './about/about.component';
 import { FormTestComponent } from './formtest/formtest.component';
+import { ChildComponent } from './child/child.component';
 
 import { PeopleService } from './people/people.service'
 import { WebApiPromiseService } from './web-api/web-api-promise.service';
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
                    StevesComponent,
                    AboutComponent,
                    FormTestComponent,
+                   ChildComponent,
                    ],
 
     providers: [PeopleService,
