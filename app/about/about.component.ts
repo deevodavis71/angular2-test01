@@ -7,9 +7,11 @@ import { ChildComponent } from '../child/child.component';
   selector: 'about',
   template: `About Page
              <br>
-             <span *ngIf="firstName">Hello {{ firstName }}</span>
+             <div *ngIf="firstName">Hello {{ firstName }}</div>
+             <div *ngIf="childFruit">You like : {{ childFruit }}</div>
              <br>
-             <child-component [passedFirstName]='firstName'></child-component>`,
+             <child-component [passedFirstName]='firstName'
+                              (notifyParent)='getNotification($event)'></child-component>`,
 })
 
 export class AboutComponent {
@@ -29,5 +31,9 @@ export class AboutComponent {
         .subscribe(params => {
             this.firstName = params['firstName'];
         });
-}
+  }
+
+  getNotification (evt: string) {
+    console.log('Got an event from the child!! -', evt);
+  }
 }
