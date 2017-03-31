@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'my-app',
   template: `<h1>Angular Router Example</h1>
+  <alert type="info">ng2-bootstrap hello world!</alert>
   <nav>
     <a routerLink="/" routerLinkActive="active">Home</a>
     <a routerLink="/steves" routerLinkActive="active">Steves</a>

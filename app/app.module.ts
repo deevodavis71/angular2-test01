@@ -14,6 +14,8 @@ import { WebApiPromiseService } from './web-api/web-api-promise.service';
 import { HttpModule } from '@angular/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
+import { DatepickerModule, AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
+
 const appRoutes: Routes = [
   { path: 'steves', component: StevesComponent },
   { path: 'about',  component: AboutComponent },
@@ -27,7 +29,8 @@ const appRoutes: Routes = [
               BrowserModule,
               HttpModule,
               FormsModule,
-              ReactiveFormsModule],
+              ReactiveFormsModule,
+              AlertModule.forRoot()],
 
     declarations: [AppComponent,
                    StevesComponent,
